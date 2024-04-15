@@ -26,6 +26,7 @@ or
 pip3 install docker
 ```
 **Recommend you use ChatGPT to install if you dont know much abt code**
+
 2. Create telebot in Telegram by BotFather
 
 3. Install Visual Studio Code for MacOS. Link https://code.visualstudio.com/download
