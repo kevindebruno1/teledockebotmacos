@@ -31,15 +31,15 @@ pip3 install docker
 
 3. Install Visual Studio Code for MacOS. Link https://code.visualstudio.com/download
 
-4. Create file and paste the **script**, replace your "TOKEN TELE BOT" and "WORKER COMMAND", then save the file as "**docker.py**"
+4. Create file (CMD+N) and paste the **script**, replace your "TOKEN TELE BOT" and "WORKER COMMAND", then save the file (CMD+S) as "**telebot.py**"
 
 5. Run this cmd in terminal
 ```bash
-python docker.py
+python telebot.py
 ```
 or
 ```bash
-python3 docker.py
+python3 telebot.py
 ```
 
 There are 5 basic commands in bot:
