@@ -31,7 +31,7 @@ pip3 install docker
 
 3. Install Visual Studio Code for MacOS. Link https://code.visualstudio.com/download
 
-4. Create file and paste the **scrpit**, replace your "TOKEN TELE BOT" and "WORKER COMMAND", then save the file as "**docker.py**"
+4. Create file and paste the **script**, replace your "TOKEN TELE BOT" and "WORKER COMMAND", then save the file as "**docker.py**"
 
 5. Run this cmd in terminal
 ```bash
