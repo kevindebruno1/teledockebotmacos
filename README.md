@@ -37,6 +37,7 @@ pip3 install docker
 ```bash
 python docker.py
 ```
+or
 ```bash
 python3 docker.py
 ```
