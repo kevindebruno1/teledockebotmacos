@@ -25,7 +25,7 @@ or
 ```bash
 pip3 install docker
 ```
-**Recommend you use ChatGPT to install if you dont know much abt code**
+**Recommend you use ChatGPT if you dont know much abt code**
 
 2. Create telebot in Telegram by BotFather
 
