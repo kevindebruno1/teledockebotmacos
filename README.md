@@ -1,4 +1,4 @@
-1. You need to install python-telegram-bot.
+1. You need to install python-telegram-bot version 13.7
 
 Type these cmds into your Terminal:
 ```bash
@@ -25,11 +25,12 @@ or
 ```bash
 pip3 install docker
 ```
+**Recommend you use ChatGPT to install if you dont know much abt code**
 2. Create telebot in Telegram by BotFather
 
 3. Install Visual Studio Code for MacOS. Link https://code.visualstudio.com/download
 
-4. Create file and paste the scrpit, replace your "TOKEN TELE BOT" and "WORKER COMMAND", then save the file as "docker.py"
+4. Create file and paste the **scrpit**, replace your "TOKEN TELE BOT" and "WORKER COMMAND", then save the file as "**docker.py**"
 
 5. Run this cmd in terminal
 ```bash
