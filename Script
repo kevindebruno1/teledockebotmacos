@@ -7,7 +7,7 @@ import os
 TOKEN = 'TELE TOKEN BOT'
 
 # Set DOCKER_HOST environment variable
-os.environ['DOCKER_HOST'] = 'unix:///var/run/docker.sock'  # Use the correct Docker socket path on macOS
+os.environ['DOCKER_HOST'] = 'unix:///var/run/docker.sock'  
 
 # Initialize Telegram and Docker clients
 bot = telegram.Bot(token=TOKEN)
