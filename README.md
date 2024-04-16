@@ -49,3 +49,4 @@ There are 5 basic commands in bot:
 - /remove_images
 - /rerun_command
 
+Link to instructional video: https://www.youtube.com/watch?v=Bc3roxIojb0
