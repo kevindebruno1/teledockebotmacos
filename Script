@@ -2,6 +2,8 @@ import telegram
 from telegram.ext import Updater, CommandHandler
 import docker
 import os
+import threading
+import time
 
 # Change token_bot to your Telegram bot token
 TOKEN = 'TELE TOKEN BOT'
@@ -74,6 +76,27 @@ def rerun_command(update, context):
     except Exception as e:
         update.message.reply_text(f"An error occurred: {str(e)}")
 
+# Restart Docker
+def restart_docker(update, context):
+    try:
+        os.system("sudo systemctl restart docker")
+        update.message.reply_text("Docker has been restarted")
+    except Exception as e:
+        update.message.reply_text(f"An error occurred: {str(e)}")
+
+# Function to check CPU usage of containers
+def check_container_cpu():
+    while True:
+        try:
+            containers = docker_client.containers.list()
+            all_zero_cpu = all(container.stats(stream=False)['cpu_stats']['cpu_usage']['total_usage'] == 0 for container in containers)
+            if all_zero_cpu:
+                bot.send_message(chat_id='YOUR_CHAT_ID', text="CPU usage of all containers is 0%")
+            time.sleep(300)  # Check every 5 minutes
+        except Exception as e:
+            print(f"An error occurred: {str(e)}")
+            time.sleep(60)  # Retry after 1 minute if error occurs
+
 # Display menu
 def menu(update, context):
     menu_message = (
@@ -83,6 +106,7 @@ def menu(update, context):
         "/remove_containers - Stop and remove all containers\n"
         "/remove_images - Remove all images\n"
         "/rerun_command - Run a specific command\n"
+        "/restart_docker - Restart Docker\n"
     )
     update.message.reply_text(menu_message)
 
@@ -92,8 +116,14 @@ updater.dispatcher.add_handler(CommandHandler('images_status', images_status))
 updater.dispatcher.add_handler(CommandHandler('remove_containers', remove_containers))
 updater.dispatcher.add_handler(CommandHandler('remove_images', remove_images))
 updater.dispatcher.add_handler(CommandHandler('rerun_command', rerun_command))
+updater.dispatcher.add_handler(CommandHandler('restart_docker', restart_docker))
 updater.dispatcher.add_handler(CommandHandler('menu', menu))
 
 # Start the bot
 updater.start_polling()
+
+# Start the thread to check container CPU
+cpu_check_thread = threading.Thread(target=check_container_cpu)
+cpu_check_thread.start()
+
 updater.idle()
