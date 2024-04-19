@@ -43,12 +43,14 @@ or
 ```bash
 python3 telebot.py
 ```
+Use the IDBot to find your chat ID in telegram
 
-There are 5 basic commands in bot:
+There are 6 basic commands in bot:
 - /containers_status
 - /images_status
 - /remove_containers
 - /remove_images
 - /rerun_command
+- /restart_docker
 
 Link to instructional video: https://www.youtube.com/watch?v=Bc3roxIojb0
